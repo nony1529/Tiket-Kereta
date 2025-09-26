@@ -12,6 +12,8 @@ $valueBtn      = "Submit";
 
 // Mengambil data dari tabel lain
 $kereta   = $db->query("SELECT * FROM kereta");
+
+//mengambil data stasiun asal dan stasiun tujuan
 $stasiun  = $db->query("SELECT * FROM stasiun");
 $stasiun2 = $db->query("SELECT * FROM stasiun");
 
