@@ -74,6 +74,7 @@ if (isset($_GET['act'])) {
 <head>
     <meta charset="UTF-8">
     <title>Data Penumpang</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
