@@ -1,6 +1,7 @@
 <?php
 require_once("koneksi.php");
 
+//membuat variabel untuk menampung data
 $id_penumpang = "";
 $nama = "";
 $nik = "";
@@ -10,6 +11,7 @@ $alamat = "";
 $nameBtn = "input"; 
 $valueBtn = "Submit";
 
+//function untuk menginput data penumpang
 function inputData($db) {
     mysqli_query($db, "INSERT INTO penumpang (nama, nik, no_hp, email, alamat)
         VALUES(
@@ -21,6 +23,7 @@ function inputData($db) {
         )") or die("Gagal Input");
 }
 
+//function untuk mengupdate data penumpang
 function updateData($db) {
     mysqli_query($db, "UPDATE penumpang SET
         nama = '" . $_POST['nama'] . "',
@@ -34,11 +37,13 @@ function updateData($db) {
     header('location:penumpang.php');
 }
 
+//function untuk menghapus data penumpang
 function deleteData($db, $id_penumpang) {
     mysqli_query($db, "DELETE FROM penumpang WHERE id_penumpang='$id_penumpang'") or die("Gagal Hapus");
     header('location:penumpang.php');
 }
 
+//function untuk mengambil data dan mengedit data penumpang
 function getEditData($db, $id_penumpang) {
     $result = mysqli_query($db, "SELECT * FROM penumpang WHERE id_penumpang='$id_penumpang'") or die("Gagal Mengambil Data");
     return mysqli_fetch_array($result);
